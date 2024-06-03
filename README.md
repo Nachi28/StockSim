@@ -2,6 +2,9 @@
 
 StockSim is a full-stack stock simulation application that allows users to simulate buying and selling stocks, view current stock prices, get the latest news, and manage a virtual wallet. The project is built with a React frontend and an Express backend.
 
+## Deployed Link
+[stocksim-client.onrender.com](stocksim-client.onrender.com)
+
 ## Features
 
 - **User Authentication**: Secure login and signup functionality.
