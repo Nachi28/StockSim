@@ -1,0 +1,107 @@
+.dashboard-main {
+  font-size: 30px;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dashboard-main p {
+  font-size: 20px;
+  padding: 0 20px;
+}
+
+
+/* Adjust styles for responsiveness if needed */
+@media screen and (max-width: 768px) {
+  .navbar-items {
+    justify-content: space-between;
+  }
+
+  .navbar-item {
+    margin-right: 0;
+  }
+}
+
+.portfolio-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.portfolio-summary .invested {
+  text-align: left;
+}
+
+.portfolio-summary .current-value {
+  text-align: right;
+}
+
+.portfolio-summary p {
+  margin: 0;
+}
+
+.portfolio-summary .invested p:first-child,
+.portfolio-summary .current-value p:first-child {
+  font-weight: bold;
+}
+
+.portfolio-summary .invested p:nth-child(2),
+.portfolio-summary .current-value p:nth-child(2) {
+  text-align: right;
+}
+
+.portfolio-summary .invested p:nth-child(4),
+.portfolio-summary .current-value p:nth-child(4) {
+  text-align: right;
+
+  ;
+}
+
+
+
+
+.form-container {
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container input[type="text"],
+.form-container input[type="date"],
+.form-container input[type="number"] {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.form-container button {
+  padding: 10px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  /* Correct the cursor path */
+  transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+  background-color: #45a049;
+  cursor: url('../assets/StonksCursor.cur'), auto;
+
+}

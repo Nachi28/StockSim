@@ -1,0 +1,166 @@
+.navbar {
+  background-color: #333;
+  width: 100%;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  height: 50px;
+  margin-right: auto;
+  /* Push the logo to the leftmost side */
+}
+
+.navbar-items {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-item {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.delete-account-button {
+  background-color: #ff5f5f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.delete-account-button:hover {
+  background-color: #ff3f3f;
+}
+
+.wallet-container {
+  position: relative;
+  color: white;
+  cursor: pointer;
+  margin-left: 20px;
+  /* Space between wallet and other items */
+
+
+}
+
+.wallet-container:hover .wallet-dropdown {
+  display: block;
+}
+
+.wallet-container p {
+  margin: 0;
+  padding: 10px 20px;
+  font-size: 18px;
+}
+
+.wallet-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  min-width: 250px;
+  padding: 10px;
+}
+
+.wallet-dropdown p {
+  margin: 10px 0;
+  padding: 5px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.wallet-dropdown p:last-child {
+  border-bottom: none;
+}
+
+.wallet-logo {
+  height: 25px;
+  margin-right: auto;
+  /* Maintain right alignment */
+  padding-left: 10px;
+  /* Add left padding */
+  padding-top: 10px;
+  /* Lower on Y-axis (positive value moves down) */
+}
+
+/* Button CSS */
+.wallet-dropdown button {
+  margin-top: 10px;
+  /* Add margin to separate buttons */
+  padding: 10px 20px;
+  /* Adjust padding */
+  background-color: #4CAF50;
+  /* Button background color */
+  color: white;
+  /* Button text color */
+  border: none;
+  /* Remove button border */
+  border-radius: 5px;
+  /* Button border radius */
+  cursor: pointer;
+  /* Cursor style */
+  font-size: 16px;
+  /* Button text font size */
+  transition: background-color 0.3s ease;
+  /* Transition effect */
+}
+
+.wallet-dropdown button:hover {
+  background-color: #45a049;
+  /* Button hover background color */
+}
+
+.scrollable-container {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.transaction-item {
+  font-size: 14px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.transaction-date-time,
+.transaction-order-qty,
+.transaction-stock-amount {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.align-right {
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.transaction-separator {
+  border: none;
+  border-top: 1px solid #ccc;
+  /* Adjust the color and style as needed */
+  width: 100%;
+  margin: 8px 0;
+  /* Adjust the margin as needed */
+}
+
+/* Additional styles for transaction item elements */
+.transaction-date,
+.transaction-stock {
+  font-size: 12px;
+}
+
+.grey {
+  color: gray;
+}
