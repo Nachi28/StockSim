@@ -12,7 +12,7 @@ export const handleRegisterSubmit = async (name, lastname, email, password, conf
         toast.success("Registration successful");
 
         // Log in the user
-        const loginResponse = await axios.post("http://localhost:3000/api/v1/login", { email, password });
+        const loginResponse = await axios.post("https://stocksim-4yuz.onrender.com/api/v1/login", { email, password });
         localStorage.setItem('auth', JSON.stringify(loginResponse.data.token));
         toast.success("Login successful");
         navigate("/dashboard");
