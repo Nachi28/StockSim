@@ -39,7 +39,7 @@ export const handleLoginSubmit = async (email, password, navigate) => {
     };
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/v1/login",
+        "https://stocksim-4yuz.onrender.com/api/v1/login",
         formData
       );
       localStorage.setItem('auth', JSON.stringify(response.data.token));
