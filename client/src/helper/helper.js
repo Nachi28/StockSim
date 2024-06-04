@@ -8,7 +8,7 @@ export const handleRegisterSubmit = async (name, lastname, email, password, conf
       const formData = { username: name + " " + lastname, email, password };
       try {
         // Register the user
-        await axios.post("http://localhost:3000/api/v1/register", formData);
+        await axios.post("https://stocksim-4yuz.onrender.com/api/v1/register", formData);
         toast.success("Registration successful");
 
         // Log in the user
@@ -75,7 +75,7 @@ export const handleAddStock = async (e, portfolio, setPortfolio, setIsCalculatin
 
   if (isValidStockTicker(stockTicker, purchaseDate)) {
     try {
-      const response = await axios.post("http://localhost:3000/api/v1/stockData", { stockTicker, date: purchaseDate });
+      const response = await axios.post("https://stocksim-4yuz.onrender.com/api/v1/stockData", { stockTicker, date: purchaseDate });
       const stockData = response.data.stockData;
 
       if (stockData.length > 0) {
@@ -146,7 +146,7 @@ export const calculateCurrentPriceAndProfit = async (portfolio, setPortfolio) =>
   const updatedPortfolio = await Promise.all(
     portfolio.map(async (stock) => {
       try {
-        const response = await axios.post("http://localhost:3000/api/v1/todayStockData", {
+        const response = await axios.post("https://stocksim-4yuz.onrender.com/api/v1/todayStockData", {
           stockTicker: stock.stockTicker,
         });
         const currentPriceData = response.data.stockData;
@@ -176,7 +176,7 @@ export const getDashboardData = async (token, setData) => {
   };
 
   try {
-    const response = await axios.get("http://localhost:3000/api/v1/dashboard", axiosConfig);
+    const response = await axios.get("https://stocksim-4yuz.onrender.com/api/v1/dashboard", axiosConfig);
     setData({ msg: response.data.msg, luckyNumber: response.data.secret });
   } catch (error) {
     toast.error(error.message);
@@ -192,7 +192,7 @@ export const fetchPortfolio = async (token, setPortfolio, setWallet) => {
   };
 
   try {
-    const response = await axios.get("http://localhost:3000/api/v1/portfolio", axiosConfig);
+    const response = await axios.get("https://stocksim-4yuz.onrender.com/api/v1/portfolio", axiosConfig);
     setPortfolio(response.data.portfolio);
     // console.log(response.data);
     setWallet(response.data.wallet);  // Fetch wallet balance from backend
@@ -209,7 +209,7 @@ export const savePortfolioAndWallet = async (token, updatedPortfolio, updatedWal
   };
 
   try {
-    await axios.post("http://localhost:3000/api/v1/portfolio", { portfolio: updatedPortfolio, wallet: updatedWallet }, axiosConfig);
+    await axios.post("https://stocksim-4yuz.onrender.com/api/v1/portfolio", { portfolio: updatedPortfolio, wallet: updatedWallet }, axiosConfig);
     toast.success("Portfolio and wallet saved successfully!");
   } catch (error) {
     toast.error("Failed to save portfolio and wallet. Please try again later.");
@@ -228,7 +228,7 @@ export const handleDeleteAccount = async (token, setToken, navigate) => {
   };
 
   try {
-    await axios.delete("http://localhost:3000/api/v1/account", axiosConfig);
+    await axios.delete("https://stocksim-4yuz.onrender.com/api/v1/account", axiosConfig);
 
 
     // Clear token and navigate to landing page after successful deletion
@@ -252,7 +252,7 @@ export const handleResetWallet = async (token, setWallet) => {
   };
 
   try {
-    await axios.post("http://localhost:3000/api/v1/reset-wallet", { wallet: initialWalletBalance }, axiosConfig);
+    await axios.post("https://stocksim-4yuz.onrender.com/api/v1/reset-wallet", { wallet: initialWalletBalance }, axiosConfig);
     setWallet(initialWalletBalance); // Update the wallet state in the Dashboard component
     toast.success("Wallet reset successfully!");
   } catch (error) {
@@ -269,7 +269,7 @@ export const handleResetAcc = async (token, setWallet, setPortfolio, setTransact
   };
 
   try {
-    await axios.post("http://localhost:3000/api/v1/reset-account", { portfolio: [], wallet: initialWalletBalance }, axiosConfig);
+    await axios.post("https://stocksim-4yuz.onrender.com/api/v1/reset-account", { portfolio: [], wallet: initialWalletBalance }, axiosConfig);
     setWallet(initialWalletBalance); // Update the wallet state in the Dashboard component
     setPortfolio([]); // Update the portfolio
     setTransactionHistory([]); // Update the transaction history
@@ -291,7 +291,7 @@ export const fetchTransactionHistory = async (token) => {
   };
 
   try {
-    const response = await axios.get("http://localhost:3000/api/v1/transaction-history", axiosConfig);
+    const response = await axios.get("https://stocksim-4yuz.onrender.com/api/v1/transaction-history", axiosConfig);
     return response.data.transactionHistory;
   } catch (error) {
     toast.error("Failed to fetch transaction history. Please try again later.");
@@ -305,7 +305,7 @@ export const saveTransaction = async (token, transaction, setTransactionHistory,
   };
 
   try {
-    await axios.post("http://localhost:3000/api/v1/save-transaction", { transaction }, axiosConfig);
+    await axios.post("https://stocksim-4yuz.onrender.com/api/v1/save-transaction", { transaction }, axiosConfig);
     setTransactionHistory([...transactionHistory, transaction]);
     toast.success("Transaction saved successfully!");
   } catch (error) {

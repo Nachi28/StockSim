@@ -59,7 +59,7 @@ const Dashboard = () => {
         }
       };
       try {
-        const response = await axios.get("http://localhost:3000/api/v1/latestNews", axiosConfig);
+        const response = await axios.get("https://stocksim-4yuz.onrender.com/api/v1/latestNews", axiosConfig);
         setNews(response.data.latestNews.data);
         setNewsFetched(true);
         setNewsVisible(!newsVisible);
