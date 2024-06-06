@@ -79,4 +79,7 @@ StockSim is a full-stack stock simulation application that allows users to simul
 
 Feel free to contribute to the project by opening a pull request. For major changes, please open an issue first to discuss what you would like to change.
 
+## License
+
+This project is licensed under the MIT License.
 
