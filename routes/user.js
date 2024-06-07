@@ -3,7 +3,7 @@ const router = express.Router();
 
 const { login, register, dashboard, getAllUsers, getStockData, getLatestNews, getLatestStockData, updateUserPortfolio,
     getUserPortfolio, updatePortfolioAndWallet, resetWallet, resetAccount, deleteUser, saveTransaction,
-    getTransactionHistory
+    getTransactionHistory, getMockAPIData
 } = require("../controllers/user");
 const authMiddleware = require('../middleware/auth')
 
@@ -12,6 +12,7 @@ router.route("/register").post(register);
 router.route("/dashboard").get(authMiddleware, dashboard);
 router.route("/stockData").post(getStockData);
 // router.route("/users").get(getAllUsers);
+router.route("/mockAPI").get(getMockAPIData);
 router.route("/latestNews").get(getLatestNews);
 router.route("/todayStockData").post(getLatestStockData);
 router.route("/portfolio").get(authMiddleware, getUserPortfolio)

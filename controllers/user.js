@@ -245,6 +245,11 @@ const getTransactionHistory = async (req, res) => {
   }
 };
 
+const getMockAPIData = async (req, res) => {
+  // console.log('Mock API data fetched successfully');
+  return res.status(200).json({ msg: 'Mock API data fetched successfully' });
+};
+
 module.exports = {
   login,
   register,
@@ -260,5 +265,7 @@ module.exports = {
   resetAccount,
   deleteUser,
   saveTransaction,
-  getTransactionHistory
+  getTransactionHistory,
+  getMockAPIData
+
 };
